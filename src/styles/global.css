@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: SpaceGrotesk;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #fff;
+  text-rendering: geometricPrecision;
+  letter-spacing: -.05em;
+}
+
+::selection {
+  background: #fff;
+  color: #111;
+}
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+
+body {
+  background: #111;
+}
+html {
+  font-size: 20px;
+}
+
+#root {
+  width: 100%;
+}
+
+.wrapper {
+  width: min(100%, 96rem);
+}
+
+@media (max-width: 1300px) {
+  html {
+    font-size: 1.54vw;
+  }
+}
+/* @media (max-width: 700px) {
+  html {
+    font-size: 1.8vw;
+  }
+} */
