@@ -9,7 +9,7 @@ const Works: React.FC = () => {
 
   const LinkToGithubOfWorks: string[] = [
     'https://github.com/Alternatio/Museum',
-    
+    'https://github.com/Alternatio/alternatio'
   ]
 
   const TextOfWorks: React.ReactNode[] = [
