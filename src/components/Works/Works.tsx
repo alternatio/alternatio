@@ -1,40 +1,83 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import style from './Works.module.css'
+import data from '../../data/dataOfWorks'
+import Marquee from 'react-fast-marquee'
+import { animate, motion } from 'framer-motion'
+
+type ImagesProps = {
+  id: number
+}
+
+const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
+  const constraintsRef = useRef(null)
+  const name: string = data.NameOfWork[props.id]
+  return (
+    <motion.div 
+      ref={constraintsRef}
+      className={style.images}>
+        {
+          data.ImagesCount.map((value, index) => {
+            const image = require(`../../images/${name + index}.png`)
+            return (
+              // <div>{index}</div>
+              <motion.img 
+              onHoverStart={() => {
+                animate
+              }}
+              drag
+              dragConstraints={constraintsRef}
+              dragElastic={.2}
+              dragTransition={{
+                bounceStiffness: 100, 
+                bounceDamping: 100
+              }}
+              className={style.image} 
+              src={image}/>
+            )
+          })
+        }
+    </motion.div>
+  )
+}
 
 const Works: React.FC = () => {
-  const HeaderOfWorks: string[] = [
-    'Museum', 
-    'This site'
-  ]
-
-  const LinkToGithubOfWorks: string[] = [
-    'https://github.com/Alternatio/Museum',
-    'https://github.com/Alternatio/alternatio'
-  ]
-
-  const TextOfWorks: React.ReactNode[] = [
-    <p>
-      The task was to make a website for the Vrubel Museum. 
-      The work was completed in the early summer of 2022. <span>ReactTS</span> is used.
-    </p>, 
-    <p>
-      The work was completed in the early summer of 2022. 
-      <span> ReactTS</span> and <span>ThreeJS</span> is used.
-    </p>
-  ]
-
   return (
     <div className={style.Works}>
-      {
-        TextOfWorks.map((value, index) => {
-          return (
-            <div>
-              <p>{index}</p>
-              {value}
-            </div>
-          )
-        })
-      }
+      <div className={'wrapper ' + style.wrapper}>
+        <div className={style.topInfo}>
+          Works
+        </div>
+      </div>
+      <div className='wrapper'>
+        <div className={style.worksItems}>
+          {data.HeaderOfWorks.map((value, index) => {
+            return (
+              <div 
+              key={index}
+              className={style.work}>
+                <Marquee
+                speed={50}
+                pauseOnHover={true}
+                gradient={false}>
+                  <div className={style.head}>
+                    {(value + '∙').repeat(3)}
+                  </div>
+                </Marquee>
+                <div className={style.text}>
+                  {data.TextOfWorks[index]}
+                </div>
+                <Images id={index}/>
+                <div className={style.linkWrapper}>
+                  <a 
+                  className={style.link}
+                  href={data.LinkToGithubOfWorks[index]}>
+                    Github
+                  </a>
+                </div>
+              </div>
+            )})}
+        </div>
+      </div>
     </div>
   )
 }

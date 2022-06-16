@@ -11,9 +11,9 @@ import Works from '../Works/Works';
 const App: React.FC = () => {
   return (
     <div className={style.App}>
-      <Header />
-      <Info />
-      <Works />
+        <Header />
+        <Info />
+        <Works />
     </div>
   );
 }

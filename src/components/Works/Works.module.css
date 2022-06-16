@@ -1,3 +1,76 @@
-.Works > p {
-  color: #ffffffaa;
+.Works {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;
+}
+.worksItems {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+  padding-bottom: 10rem;
+}
+.wrapper {
+  padding: 0 5rem;
+  position: relative;
+}
+.topInfo {
+  border-top: solid .15rem #fff;
+  font-size: 1.2rem;
+  padding: .5rem 0;
+  text-transform: uppercase;
+}
+.head {
+  font-size: 7rem;
+  text-transform: uppercase;
+  cursor: default;
+}
+.text {
+  width: min(100%, 42rem);
+  text-align: justify;
+  padding: 4rem 0 6rem 17.5rem;
+}
+.text * {
+  font-size: 1.2rem;
+}
+.text > p {
+  padding: 2rem 0;
+  color: #fffa;
+}
+.linkWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 17.5rem;
+}
+.link {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  border: #fffa solid .15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  transition: .2s ease-in-out;
+}
+.link:hover {
+  transform: scale(1.2);
+}
+.images {
+  height: 20rem;
+  width: 100%;
+  /* position: relative; */
+  user-select: none;
+}
+.image {
+  width: 40%;
+  /* position: absolute; */
+  z-index: 100;
+  user-select: none;
+}
+@media (max-width: 1400px) {
+  .text {
+    width: min(100%, 42rem);
+    padding: 4rem 3rem 6rem 11rem;
+  }
 }
