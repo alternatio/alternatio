@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import style from './Works.module.css'
 import data from '../../data/dataOfWorks'
 import Marquee from 'react-fast-marquee'
-import { animate, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 type ImagesProps = {
   id: number
@@ -11,6 +11,7 @@ type ImagesProps = {
 const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
   const constraintsRef = useRef(null)
   const name: string = data.NameOfWork[props.id]
+  let num: number
   return (
     <motion.div 
       ref={constraintsRef}
@@ -21,11 +22,22 @@ const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
             return (
               // <div>{index}</div>
               <motion.img 
-              onHoverStart={() => {
-                animate
+              onClick={() => {
+                num = Math.round(Math.random() * 100)
+                console.log(num)
               }}
+              style={{
+                width: num
+              }}
+              whileTap={{ scale: 1.1 }}
               drag
-              dragConstraints={constraintsRef}
+              dragConstraints={{
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+              
               dragElastic={.2}
               dragTransition={{
                 bounceStiffness: 100, 

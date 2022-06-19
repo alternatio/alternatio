@@ -57,17 +57,28 @@
   transform: scale(1.2);
 }
 .images {
-  height: 20rem;
+  height: auto;
   width: 100%;
+  padding: 4rem 0 8rem 0;
   /* position: relative; */
   user-select: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* gap: 1rem; */
+
 }
 .image {
-  width: 40%;
+  aspect-ratio: 1/2;
   /* position: absolute; */
   z-index: 100;
   user-select: none;
+  cursor: pointer;
+  z-index: 2;
+  image-rendering: optimizeQuality;
+  border-radius: .25rem;
+  object-fit: cover;
 }
+
 @media (max-width: 1400px) {
   .text {
     width: min(100%, 42rem);
