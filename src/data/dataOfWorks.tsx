@@ -23,12 +23,12 @@ const objectOfWorks: objectOfWorksInterface = {
   ],
   TextOfWorks: [
     <p>
-      <span>&#160;⬤&#160;</span>
+      <span>{' '}⬤{' '}</span>
       The task was to make a website for the Vrubel Museum. 
       The work was completed in the early summer of 2022. <span>ReactTS</span> is used.
     </p>, 
     <p>
-      <span>&#160;⬤&#160;</span>
+      <span>{' '}⬤{' '}</span>
       The work was completed in the early summer of 2022. 
       <span> ReactTS</span> and <span>ThreeJS</span> is used.
     </p>

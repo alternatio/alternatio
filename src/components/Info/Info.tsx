@@ -10,7 +10,7 @@ const Info: React.FC = () => {
         </div>
         <div className={style.content}>
           <p>
-            <span>&#160;⬤&#160;</span>
+            <span>{' '}⬤{' '}</span>
             The beginning of my programming activity falls at the end of 2021. 
             Even then I got used to <span>HTML</span>, <span>CSS</span>. 
             According to my feelings, I can say that I am ready to do the design / layout of the site, 
