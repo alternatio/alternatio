@@ -9,7 +9,7 @@ const Header: React.FC = () => {
         <div className={style.block2}></div>
       </div> */}
       {/* <div className={style.text}>Lorem ipsum dolor sit.</div> */}
-
+      
       <div className={'wrapper ' + style.wrapper}>
         <div className={style.topInfo}>
           <span>Home</span>
