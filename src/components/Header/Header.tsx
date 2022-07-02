@@ -17,39 +17,29 @@ const Lights: React.FC = () => {
   });
   return (
     <>
-      <ambientLight intensity={0.2} />
+      <ambientLight color="#000" intensity={0.2} />
 
       <pointLight 
       position={[-10, 5, 10]} 
-      intensity={1} 
+      intensity={3} 
       color="#0ff" 
       // color="#0f0"
       />
 
       <pointLight
       position={[4, -5, -4]}
-      intensity={1}
-      // color="#f00"
-      color="#000"
-      />
-      <motion.directionalLight
-      color="#000"
-      castShadow
-      intensity={5}
-      shadow-mapSize-width={1024}
-      shadow-mapSize-height={1024}
-      // shadow-camera-far={20}
-      // shadow-camera-left={-10}
-      // shadow-camera-right={10}
-      // shadow-camera-top={10}
-      // shadow-camera-bottom={-10}
-      animate={{ x: 0, y: 8, z: 5 }}
+      intensity={3}
+      color="#f00"
+      // color="#000"
       />
     </>
   );
 }
 
 const Geometry: React.FC = () => {
+  const randGeometry1: number = Math.round(Math.random() * (10 - 1) + 1)
+  const randGeometry2: number = Math.round(Math.random() * (10 - 1) + 1)
+
   return (
     <>
       <motion.mesh 
@@ -58,20 +48,29 @@ const Geometry: React.FC = () => {
       }}
       animate={{
         rotateX: 360,
-        rotateY: 360
+        rotateY: 180,
+        rotateZ: 180
       }}
       transition={{
         duration: 200,
         ease: 'linear',
         repeat: Infinity
       }}
-      receiveShadow 
-      castShadow>
-        <torusKnotBufferGeometry args={[12, 2, 50, 5]} />
+      // receiveShadow 
+      // castShadow
+      >
+        <torusKnotBufferGeometry args={[10, 3, 40, 5, randGeometry1, randGeometry2]} />
         <meshPhysicalMaterial
-        // flatShading
-        wireframe
-        color="#888"
+        flatShading
+        // :)
+        // wireframe
+        // --
+        color="#fff"
+        emissive="#000"
+        roughness={0}
+        metalness={.5}
+        transparent
+        opacity='.9'
         // clearcoat={1}
         // clearcoatRoughness={1}
         />
