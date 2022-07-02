@@ -70,7 +70,7 @@
   user-select: none;
   display: flex;
   gap: .25rem;
-  padding: 2rem;
+  padding: 10rem;
   position: relative;
   background: #2226;
   border-top: #fffa solid .05rem;
@@ -89,9 +89,9 @@
   /* border-radius: .25rem; */
   object-fit: cover;
   /* border: .1rem solid #fffa; */
-  box-shadow: #11111144 0 0 1.5rem;
+  /* box-shadow: #11111144 0 0 1.5rem; */
   opacity: 1;
-  image-rendering: optimizeQuality;
+  /* image-rendering: optimizeQuality; */
 }
 .images:hover > .dragInfo {
   opacity: 0;

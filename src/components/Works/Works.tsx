@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import style from './Works.module.css'
 import data from '../../data/dataOfWorks'
 import Marquee from 'react-fast-marquee'
-import { motion } from 'framer-motion'
+import { animate, motion } from 'framer-motion'
 import handCursor from '../../images/handCursor.svg'
 
 const Works: React.FC = () => {
@@ -114,6 +114,9 @@ const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
             return (
               // <div>{index}</div>
               <motion.img 
+              // onViewportEnter={
+                
+              // }
               key={index}
               whileInView={{ opacity: 1 }}
               // variants={variantsOfImage}

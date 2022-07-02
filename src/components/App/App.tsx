@@ -7,6 +7,7 @@ import '../../fonts/fonts.css'
 import Header from './../Header/Header';
 import Info from '../Info/Info';
 import Works from '../Works/Works';
+import BackDeco from '../BackDeco/BackDeco';
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <Header />
         <Info />
         <Works />
+        <BackDeco />
     </div>
   );
 }
