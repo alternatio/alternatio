@@ -10,20 +10,16 @@ const Lights: React.FC = () => {
   });
   return (
     <>
-      {/* <ambientLight color="#000" intensity={2} /> */}
-
       <pointLight 
       position={[-10, 5, 10]} 
       intensity={15} 
       color="#0ff" 
-      // color="#0f0"
       />
 
       <pointLight
       position={[4, -5, -4]}
       intensity={15}
-      color="#f00"
-      // color="#000"
+      color="#f00" 
       />
     </>
   );
@@ -72,8 +68,6 @@ const Geometry: React.FC = () => {
         ease: 'linear',
         repeat: Infinity
       }}
-      // receiveShadow 
-      // castShadow
       >
         <torusKnotBufferGeometry args={[10, 3, 80, 4, randGeometry1, randGeometry2]} />
         <motion.meshPhysicalMaterial
@@ -132,12 +126,6 @@ const Scene: React.FC = ()  => {
 const Header: React.FC = () => {
   return (
     <div className={style.Header}>
-      {/* <div className={style.layer}>
-        <div className={style.block1}></div>
-        <div className={style.block2}></div>
-      </div>
-      <div className={style.text}>Lorem ipsum dolor sit.</div> */}
-      
       <div className={'wrapper ' + style.wrapper}>
         <div className={style.topInfo}>
           <span>Home</span>
