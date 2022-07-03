@@ -79,39 +79,24 @@ const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
     <div 
       ref={constraintsRef}
       className={style.images}>
+        <div
+        className={style.backTextImages}
+        >{data.HeaderOfWorks[props.id]}</div>
         {
           data.ImagesCount.map((value, index) => {
             const image = require(`../../images/${name + index}.png`)
             num1 = Math.round(Math.random() * (80 + 80) - 80)
             num2 = Math.round(Math.random() * (50 + 50) - 50)
 
-
-            // const variantsOfImage = {
-            //   none: {
-            //     top: 'none',
-            //     left: 'none',
-            //     height: '40%',
-            //     zIndex: 2
-            //   },
-            //   fullScreen: {
-            //     top: 0,
-            //     left: 0,
-            //     height: '100%',
-            //     zIndex: 101
-            //   }
-            // }
-
             console.log(num1 + ' num1')
             console.log(num2 + ' num2')
             return (
-              // <div>{index}</div>
               <motion.img 
               // onViewportEnter={
                 
               // }
               key={index}
               whileInView={{ opacity: 1 }}
-              // variants={variantsOfImage}
               initial={{
                 opacity: 0
               }}

@@ -32,22 +32,10 @@ const Geometry: React.FC = () => {
   let color: string = ''
   
   const randColor: Function = () => {
+    const pallet: string[] = ['0', '3', '6', 'f']
     for(let i = 0; i < 3; i++) {
       const numberOfColor: number = Math.round(Math.random() * 3)
-      switch(numberOfColor) {
-        case 0:
-          color += '0'
-          break
-        case 1:
-          color += '3'
-          break
-        case 2:
-          color += '6'
-          break
-        case 3:
-          color += 'f'
-          break
-      }
+      color += pallet[numberOfColor]
     }
   }
   randColor()

@@ -78,6 +78,10 @@
   align-items: center;
   justify-content: center;
 }
+.backTextImages {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
 .image {
   height: 40%;
   aspect-ratio: 16/9;
