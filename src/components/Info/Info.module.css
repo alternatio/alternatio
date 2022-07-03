@@ -60,4 +60,8 @@
   .wrapper {
     padding: 0 2rem;
   }
+  .deco {
+    font-size: 8rem;
+    padding: 0 3rem;
+  }
 }
