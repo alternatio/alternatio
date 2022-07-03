@@ -57,7 +57,7 @@ const Geometry: React.FC = () => {
         repeat: Infinity
       }}
       >
-        <torusKnotBufferGeometry args={[10, 3, 80, 4, randGeometry1, randGeometry2]} />
+        <torusKnotBufferGeometry args={[10, 3, 80, 6, randGeometry1, randGeometry2]} />
         <motion.meshPhysicalMaterial
         flatShading
         // :)
@@ -71,7 +71,7 @@ const Geometry: React.FC = () => {
         opacity='1'
         clearcoat={1}
         clearcoatRoughness={1}
-        envMaps="reflection"
+        // envMaps="reflection"
         />
       </motion.mesh>
     </>

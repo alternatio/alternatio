@@ -50,7 +50,7 @@
 .link {
   margin-top: 5rem;
   font-size: 1.5rem;
-  padding: 1.5rem;
+  padding: 2rem;
   border: #fffa solid .15rem;
   display: flex;
   align-items: center;
@@ -60,7 +60,13 @@
   transition: .2s ease-in-out;
 }
 .link:hover {
-  transform: scale(1.2);
+  background: #fff;
+  color: #111;
+  box-shadow: #222 1rem 1rem 0;
+}
+.link:active {
+  box-shadow: #222 0 0 0;
+  transform: translateX(1rem) translateY(1rem);
 }
 .images {
   height: auto;
