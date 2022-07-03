@@ -87,9 +87,6 @@ const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
             const image = require(`../../images/${name + index}.png`)
             num1 = Math.round(Math.random() * (80 + 80) - 80)
             num2 = Math.round(Math.random() * (50 + 50) - 50)
-
-            console.log(num1 + ' num1')
-            console.log(num2 + ' num2')
             return (
               <motion.img 
               // onViewportEnter={
@@ -119,6 +116,7 @@ const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
                 bounceDamping: 8
               }}
               className={style.image} 
+              alt={value}
               src={image}/>
             )
           })

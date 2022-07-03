@@ -26,8 +26,8 @@ const Lights: React.FC = () => {
 }
 
 const Geometry: React.FC = () => {
-  const randGeometry1: number = Math.round(Math.random() * (5 - 1) + 1)
-  const randGeometry2: number = Math.round(Math.random() * (5 - 1) + 1)
+  const randGeometry1: number = Math.round(Math.random() * (5 - 2) + 2)
+  const randGeometry2: number = Math.round(Math.random() * (5 - 2) + 2)
 
   let color: string = ''
   
@@ -60,18 +60,18 @@ const Geometry: React.FC = () => {
         <torusKnotBufferGeometry args={[10, 3, 80, 6, randGeometry1, randGeometry2]} />
         <motion.meshPhysicalMaterial
         flatShading
+        reflectivity={0}
         // :)
         // wireframe={true}
         // --
         color="#fff"
         emissive={"#"+color}
-        roughness={1}
-        metalness={1}
+        roughness={2}
+        metalness={1.5}
         transparent
-        opacity='1'
+        opacity={1}
         clearcoat={1}
         clearcoatRoughness={1}
-        // envMaps="reflection"
         />
       </motion.mesh>
     </>

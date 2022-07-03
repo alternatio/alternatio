@@ -36,7 +36,9 @@ const Contacts: React.FC = () => {
             {dataOfContacts.namesOfContacts.map((value, index) => {
               const image = require(`../../images/${value}.svg`)
               return (
-                <div className={style.contact}>
+                <div 
+                key={value}
+                className={style.contact}>
                   <a 
                   className={style.contactLink}
                   href={dataOfContacts.linksOfContacts[index]}>

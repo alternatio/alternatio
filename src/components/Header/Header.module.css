@@ -25,7 +25,7 @@
 .headLogo {
   font-size: 10rem;
   font-weight: 700;
-  padding-left: 2.5rem;
+  padding-left: 7.5%;
   user-select: none;
 }
 .headLogo > span {
@@ -63,4 +63,23 @@
   justify-content: center;
 
   transform: translateZ(-10px) scale(2);
+}
+
+@media (max-width: 1300px) {
+  .headLogo {
+    font-size: 6rem;
+    padding-left: 1rem;
+  }
+  .headLogo > span {
+    font-size: 6rem;
+  }
+  .headDescription > span {
+    color: #ffffffaa;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 850px) {
+  .wrapper {
+    padding: 1.25rem 2rem 0 2rem;
+  }
 }

@@ -30,7 +30,7 @@ const objectOfWorks: objectOfWorksInterface = {
     <p>
       <span>{' '}⬤{' '}</span>
       The work was completed in the early summer of 2022. 
-      <span> ReactTS</span> and <span>ThreeJS</span> is used.
+      <span> ReactTS</span> and <span>Three</span> is used.
     </p>
   ],
   ImagesCount: []

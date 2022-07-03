@@ -3,9 +3,6 @@
   padding: 3rem 5rem;
   background: #181818;
 }
-.contactsBlock {
-  
-}
 .header {
   border-top: #fff solid .15rem;
   padding: 1rem 0 3rem 0;
@@ -31,7 +28,7 @@
   height: 2rem;
 }
 .contactText {
-  font-size: 1.2rem;
+  font-size: 1rem;
   /* font-family: IBM3270; */
 }
 .contactLink:hover {
@@ -43,11 +40,17 @@
   box-shadow: #fff 0 0 0;
 }
 .footer {
-  padding-top: 3rem;
+  padding-top: 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .footer>div {
-  /* font-family: IBM3270; */
+  font-family: IBM3270;
+}
+
+@media (max-width: 850px) {
+  .Contacts {
+    padding: 3rem 2rem;
+  }
 }

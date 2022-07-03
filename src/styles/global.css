@@ -15,6 +15,7 @@
 ::selection {
   background: #fff;
   color: #111;
+  text-shadow: none;
 }
 
 ::-webkit-scrollbar {
@@ -39,9 +40,9 @@ html {
   width: min(100%, 96rem);
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 800px) {
   html {
-    font-size: 1.54vw;
+    font-size: 2.5vw;
   }
 }
 /* @media (max-width: 700px) {

@@ -33,7 +33,7 @@
 .text {
   width: min(100%, 42rem);
   text-align: justify;
-  padding: 4rem 0 6rem 17.5rem;
+  padding: 4rem 0 6rem 10rem;
 }
 .text * {
   font-size: 1.2rem;
@@ -45,7 +45,7 @@
 .linkWrapper {
   display: flex;
   justify-content: flex-end;
-  padding: 0 17.5rem;
+  padding: 0 5rem;
 }
 .link {
   margin-top: 5rem;
@@ -89,10 +89,10 @@
   text-transform: uppercase;
 }
 .image {
-  height: 40%;
+  width: min(100%, 32rem);
   aspect-ratio: 16/9;
   user-select: none;
-  cursor: pointer;
+  cursor: grab;
   position: absolute;
   z-index: 2;
   /* border-radius: .25rem; */
@@ -101,6 +101,9 @@
   /* box-shadow: #11111144 0 0 1.5rem; */
   opacity: 1;
   /* image-rendering: optimizeQuality; */
+}
+.image:active {
+  cursor: grabbing;
 }
 .dragInfo {
   background: #1114;
@@ -129,6 +132,18 @@
 @media (max-width: 1400px) {
   .text {
     width: min(100%, 42rem);
-    padding: 4rem 3rem 6rem 11rem;
+    padding: 4rem 3rem 6rem 5rem;
+  }
+}
+@media (max-width: 850px) {
+  .wrapper {
+    padding: 0 2rem;
+  }
+  .text {
+    width: min(70%, 42rem);
+    padding: 4rem 0 6rem 2rem;
+  }
+  .text * {
+    font-size: 1rem;
   }
 }
