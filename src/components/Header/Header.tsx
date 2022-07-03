@@ -3,13 +3,6 @@ import style from './Header.module.css'
 import { motion, MotionCanvas, LayoutCamera } from 'framer-motion-3d'
 import { useThree, useFrame } from "@react-three/fiber";
 
-type cameraConfigTypes = {
-  x?: number | string
-  y?: number | string
-  z?: number | string
-  fov?: number | string
-}
-
 const Lights: React.FC = () => {
   const three = useThree();
   useFrame(() => {
@@ -17,18 +10,18 @@ const Lights: React.FC = () => {
   });
   return (
     <>
-      <ambientLight color="#000" intensity={0.2} />
+      {/* <ambientLight color="#000" intensity={2} /> */}
 
       <pointLight 
       position={[-10, 5, 10]} 
-      intensity={3} 
+      intensity={15} 
       color="#0ff" 
       // color="#0f0"
       />
 
       <pointLight
       position={[4, -5, -4]}
-      intensity={3}
+      intensity={15}
       color="#f00"
       // color="#000"
       />
@@ -37,46 +30,77 @@ const Lights: React.FC = () => {
 }
 
 const Geometry: React.FC = () => {
-  const randGeometry1: number = Math.round(Math.random() * (10 - 1) + 1)
-  const randGeometry2: number = Math.round(Math.random() * (10 - 1) + 1)
+  const randGeometry1: number = Math.round(Math.random() * (5 - 1) + 1)
+  const randGeometry2: number = Math.round(Math.random() * (5 - 1) + 1)
 
+  let color: string = ''
+  
+  const randColor: Function = () => {
+    for(let i = 0; i < 3; i++) {
+      const numberOfColor: number = Math.round(Math.random() * 3)
+      switch(numberOfColor) {
+        case 0:
+          color += '0'
+          break
+        case 1:
+          color += '3'
+          break
+        case 2:
+          color += '6'
+          break
+        case 3:
+          color += 'f'
+          break
+      }
+    }
+  }
+  randColor()
+
+  const degToFullRotation = Math.PI * 2
   return (
     <>
       <motion.mesh 
       initial={{
-        z:-10
+        z: -10
       }}
       animate={{
-        rotateX: 360,
-        rotateY: 180,
-        rotateZ: 180
+        rotateX: degToFullRotation,
+        rotateY: degToFullRotation
       }}
       transition={{
-        duration: 200,
+        duration: 8,
         ease: 'linear',
         repeat: Infinity
       }}
       // receiveShadow 
       // castShadow
       >
-        <torusKnotBufferGeometry args={[10, 3, 40, 5, randGeometry1, randGeometry2]} />
-        <meshPhysicalMaterial
+        <torusKnotBufferGeometry args={[10, 3, 80, 4, randGeometry1, randGeometry2]} />
+        <motion.meshPhysicalMaterial
         flatShading
         // :)
-        // wireframe
+        // wireframe={true}
         // --
         color="#fff"
-        emissive="#000"
-        roughness={0}
-        metalness={.5}
+        emissive={"#"+color}
+        roughness={1}
+        metalness={1}
         transparent
-        opacity='.9'
-        // clearcoat={1}
-        // clearcoatRoughness={1}
+        opacity='1'
+        clearcoat={1}
+        clearcoatRoughness={1}
+        envMaps="reflection"
         />
       </motion.mesh>
     </>
   );
+}
+
+type cameraConfigTypes = {
+  x?: number | string
+  y?: number | string
+  z?: number | string
+  fov?: number | string
 }
 
 const Scene: React.FC = ()  => {

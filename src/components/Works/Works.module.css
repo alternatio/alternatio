@@ -72,7 +72,6 @@
   gap: .25rem;
   padding: 10rem;
   position: relative;
-  background: #2226;
   border-top: #fffa solid .05rem;
   border-bottom: #fffa solid .05rem;
   display: flex;
@@ -92,10 +91,6 @@
   /* box-shadow: #11111144 0 0 1.5rem; */
   opacity: 1;
   /* image-rendering: optimizeQuality; */
-}
-.images:hover > .dragInfo {
-  opacity: 0;
-  pointer-events: none;
 }
 .dragInfo {
   background: #1114;

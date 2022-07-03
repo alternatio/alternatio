@@ -2,8 +2,7 @@ import React, { useRef } from 'react'
 import style from './Works.module.css'
 import data from '../../data/dataOfWorks'
 import Marquee from 'react-fast-marquee'
-import { animate, motion } from 'framer-motion'
-import handCursor from '../../images/handCursor.svg'
+import { motion } from 'framer-motion'
 
 const Works: React.FC = () => {
   return (
@@ -80,13 +79,6 @@ const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
     <div 
       ref={constraintsRef}
       className={style.images}>
-        <div className={style.dragInfo}>
-          <span>
-            <img 
-            src={handCursor} 
-            alt="handCursor" />
-          </span>
-        </div>
         {
           data.ImagesCount.map((value, index) => {
             const image = require(`../../images/${name + index}.png`)
@@ -120,14 +112,16 @@ const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
               key={index}
               whileInView={{ opacity: 1 }}
               // variants={variantsOfImage}
-              initial='none'
+              initial={{
+                opacity: 0
+              }}
               
               animate={{
                 x: (num1 + '%'),
                 y: (num2 + '%'),
               }}
               transition={{
-                duration: .25
+                duration: .5
               }}
               whileDrag={{ scale: 1.25 }}
               whileHover={{ zIndex: 100 }}
