@@ -36,7 +36,6 @@ type WorkProps = {
 const Work: React.FC<WorkProps> = (props: WorkProps) => {
   return (
     <motion.div 
-    // ref={constraintsRef}
     key={props.index}
     className={style.work}>
       <Marquee
@@ -52,7 +51,6 @@ const Work: React.FC<WorkProps> = (props: WorkProps) => {
       </div>
 
       <Images 
-      // constraintsRef={constraintsRef}
       id={props.index}/>
       <div className={style.linkWrapper}>
         <a 
@@ -67,14 +65,11 @@ const Work: React.FC<WorkProps> = (props: WorkProps) => {
 
 type ImagesProps = {
   id: number
-  // constraintsRef: React.MutableRefObject<null>
 }
 
 const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
   const constraintsRef = useRef(null)
   const name: string = data.NameOfWork[props.id]
-  let num1: number
-  let num2: number
   return (
     <div 
       ref={constraintsRef}
@@ -85,8 +80,7 @@ const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
         {
           data.ImagesCount.map((value, index) => {
             const image = require(`../../images/${name + index}.png`)
-            num1 = Math.round(Math.random() * (80 + 80) - 80)
-            num2 = Math.round(Math.random() * (50 + 50) - 50)
+
             return (
               <motion.img 
               // onViewportEnter={
@@ -97,15 +91,18 @@ const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
               initial={{
                 opacity: 0
               }}
-              
-              animate={{
-                x: (num1 + '%'),
-                y: (num2 + '%'),
-              }}
+              animate={
+                ({
+                  y: index*35 + '%',
+                  scale: 0.8,
+                  boxShadow: `0rem 0rem 0rem .3rem #fff`
+                })
+              }
+
               transition={{
                 duration: .5
               }}
-              whileDrag={{ scale: 1.25 }}
+              whileDrag={{ scale: 0.9 }}
               whileHover={{ zIndex: 100 }}
               drag
               dragConstraints={constraintsRef}
