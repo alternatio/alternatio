@@ -93,7 +93,7 @@ const Images: React.FC<ImagesProps> = (props: ImagesProps) => {
               }}
               animate={
                 ({
-                  y: index*35 + '%',
+                  y: index*10 + '%',
                   scale: 0.8,
                   boxShadow: `0rem 0rem 0rem .3rem #fff`
                 })
