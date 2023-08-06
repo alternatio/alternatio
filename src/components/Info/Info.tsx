@@ -13,11 +13,10 @@ const Info: React.FC = () => {
             <p>
               <span>{' '}⬤{' '}</span>
               The beginning of my programming activity falls at the end of 2021. 
-              Even then I got used to <span>HTML</span>, <span>CSS</span>. 
-              According to my feelings, I can say that I am ready to do the design / layout of the site, 
-              as well as build simple logic. 
-              Worked with <span>React</span>, <span>TS</span>, 
-              <span>ThreeJS</span>, I know <span>CSS</span> well.
+              Even then I got used to <span>HTML</span> and <span>CSS</span>.
+              Next was the development and study of frameworks, libraries and other.
+              Worked with <span>React</span>, <span>SCSS</span>, <span>TS</span>,
+              <span>ThreeJS</span>, <span>Firestore</span>.
             </p>
             <p>
               No commercial experience.

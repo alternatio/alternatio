@@ -13,10 +13,12 @@
   font-size: 1.2rem;
   padding: .5rem 0;
   text-transform: uppercase;
+  width: min(100%, 30rem);
 }
 .content > p {
   color: #ffffffaa;
   padding: 4rem 5rem;
+  text-indent: 3rem;
 }
 .content > p:nth-child(2) {
   color: #ffffff88;
@@ -24,6 +26,7 @@
 .content * {
   font-size: 1.2rem;
   /* text-shadow: #111 0 0 .5rem; */
+  /*font-variation-settings: 'wdth' 20;*/
 }
 
 .content {
@@ -32,12 +35,11 @@
   padding-bottom: 3rem;
 }
 .deco {
-  font-size: 12rem;
-  font-family: IBM3270;
+  font-size: 14rem;
+  font-family: IBM3270, monospace;
   display: flex;
   align-items: center;
   padding: 0 3rem;
-  /* text-shadow: #111 0 0 .5rem; */
 }
 
 .grid {

@@ -116,15 +116,19 @@ const Header: React.FC = () => {
     <div className={style.Header}>
       <div className={'wrapper ' + style.wrapper}>
         <div className={style.topInfo}>
-          <span>Home</span>
+          <span>Main Page — Portfolio</span>
         </div>
         <div className={style.head}>
           <div className={style.headLogo}>
             Alternati<span>o</span>
           </div>
+          <span className={style.headMiddleDescription}>
+            Mr Shinkarev
+          </span>
           <div className={style.headDescription}>
-            <span>Web-developer</span>
+            <span>Frontend-developer</span>
             <span>Web-designer?</span>
+            <span>UX/UI</span>
           </div>
         </div>
       </div>

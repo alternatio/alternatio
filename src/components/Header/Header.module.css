@@ -35,14 +35,24 @@
   color: #111;
   padding: 0 .4rem 0 0;
   margin: 0 .5rem;
+  border-radius: .25rem;
 }
+.headMiddleDescription {
+  color: #ffffffaa;
+  font-size: 1.5rem;
+}
+
 .headDescription {
+  border-top: #ffffff solid 3px;
+  padding-top: .75rem;
+  margin-top: 1rem;
   transform-origin: left;
-  transform: rotate(90deg);
+  /*transform: rotate(90deg);*/
   display: flex;
   flex-direction: column;
   width: fit-content;
   padding-bottom: 2.4rem;
+  writing-mode: vertical-rl;
 }
 .headDescription > span {
   color: #ffffffaa;
