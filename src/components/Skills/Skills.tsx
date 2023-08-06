@@ -1,6 +1,5 @@
 import React from 'react'
 import style from './Skills.module.css'
-import { motion } from 'framer-motion'
 
 interface skillDataTypes {
   skillNames: string[]
